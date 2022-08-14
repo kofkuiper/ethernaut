@@ -27,8 +27,8 @@ describe("Fallback", function () {
         })
     })
 
-    describe("Cliam owner and reduce balance to 0", function () {
-        it("Should cliam owner and reduce balance to 0", async function () {
+    describe("Claim owner and reduce balance to 0", function () {
+        it("Should claim owner and reduce balance to 0", async function () {
             const { fallback, newOnwer } = await loadFixture(deployFallback);
             await fallback.connect(newOnwer).contribute({ value: toWei(0.0001) })
             await newOnwer.sendTransaction({ to: fallback.address, value: toWei(0.0001) })

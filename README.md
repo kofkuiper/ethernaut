@@ -1,7 +1,7 @@
 # Learn Solidity from Ethernaut
 https://ethernaut.openzeppelin.com/
 
-In this repository, I will explain each topic I learned from Ethernaut.
+In this repository, I will explain each level I learned from Ethernaut.
 
 **1. Hello Ethernaut**
    - You can enter these commands in your browser's console
@@ -85,7 +85,7 @@ contract Fallback {
 ```
 
   - In this level we need to claim ownership of the contract and reduce it's balance to 0. 
-    - How to cliam ownership?
+    - How to claim ownership?
       - In the Fallback contract, we will see a `contribute` function that has conditions if we send ETH more than the owner balance of the contract. We will be the owner of the contract. But it requires ETH that we passed to the `contribute` function must be less than 0.001 ETH, so we can't be coming to the owner of the contract. Let's look at the `receive` function, it requires ETH more than 0, and the contribution balance must be more than 0. So if we call the `contribute` function and send ETH more than 0 but less than 0.001 ETH. After that, we call the `receive` (fallback function) function by sending ETH more than 0 ETH to the contract. We will become the owner of the contract.
         ```shell
         await contract.contribute({value: toWei('0.000001')})
@@ -128,8 +128,8 @@ contract Fallback {
           Fallback
                 Deployment
                 ✔ Should set the right owner (1040ms)
-                Cliam owner and reduce balance to 0
-                ✔ Should cliam owner and reduce balance to 0 (100ms)
+                Claim owner and reduce balance to 0
+                ✔ Should claim owner and reduce balance to 0 (100ms)
 
 
         2 passing (1s)
